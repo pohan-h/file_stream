@@ -42,7 +42,7 @@ void loop() {
   // 測距
   ProgTime = Trigger();
 
-  for(int i=0; i<8; i++){
+  for(int i=0; i<25; i++){
     digitalWrite(stepPin, HIGH);
     delay(10);
     digitalWrite(stepPin, LOW);
@@ -50,21 +50,9 @@ void loop() {
   }
   delay(100);
   Serial.println(ProgTime*0.01768);
-  j++;
   
   
-  ProgTime = Trigger();
-  for(int i=0; i<9; i++){
-    digitalWrite(stepPin, HIGH);
-    delay(10);
-    digitalWrite(stepPin, LOW);
-    delay(10);
-  }
-  delay(100);
-  Serial.println(ProgTime*0.01768);
-  j++;
-  
-  if(j==18){
+  if(j==6){
     j=0;
     digitalWrite(dirPin ,LOW);
     delay(30);
@@ -78,6 +66,8 @@ void loop() {
     delay(30);
     
   }
+  
+  j++;
   
   
 }
